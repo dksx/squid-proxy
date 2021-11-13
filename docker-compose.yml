@@ -1,0 +1,11 @@
+version: "2.4"
+services:
+  squid:
+    image: squid:latest
+    container_name: "squid"
+    ports:
+      - "80:3128"
+    volumes:
+      - ./access.conf:/etc/squid/conf.d/access.conf
+    restart: on-failure
+
